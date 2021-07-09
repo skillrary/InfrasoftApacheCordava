@@ -1,0 +1,39 @@
+{{string_var}}
+{{number_var}}
+{{boolean_in_online}}
+
+<br>
+
+{{user.name}}
+{{user.salary}}
+{{user.city}}
+
+<br>
+
+{{user_list[0]}}
+{{user_list[1]}}
+{{user_list[2]}}
+
+<br>
+<h1>User List</h1>
+<div *ngFor="let user of user_list">
+    - {{user}}
+</div>
+
+<br>
+<h1>Product List</h1>
+<div *ngFor="let product of products">
+    {{product.name}}
+    <div *ngFor="let image of product.images">
+        <img src={{image}} style="width: 250px; height: auto;"/>
+    </div>
+    <div *ngIf="product.images.length === 0">
+        There is no product images to display.!
+    </div>
+    <p>Price: {{product.price}} </p>
+    <h5>Available colors: </h5>
+    <div *ngFor="let color of product.colors">
+        {{color}}
+    </div>
+    <hr>
+</div>
