@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { CommonService } from './services/common.service';
 
 @Component({
   selector: 'app-root',
@@ -6,6 +8,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+
+  step = 'step';
+
+  size = 10;
   
   string_var = 'John Doe';
   number_var = 1234;
@@ -49,7 +55,45 @@ export class AppComponent {
       colors: ['black']
     }
   ];
+
+  username = '';
+
+  myForm: FormGroup;
+
+  constructor(
+    private cs: CommonService
+  ) {
+    setTimeout(() => {
+      this.step = 'step1';
+    }, 5000);
+
+    const sum = this.cs.doSum(10, 20);
+    
+
+    this.myForm = new FormGroup({
+      name: new FormControl('', [
+        Validators.required,
+        Validators.minLength(4)
+      ]),
+      email: new FormControl(''),
+      message: new FormControl('')
+    });
+  }
  
   
-  // {} = object
+  dec() {
+    this.size--;
+  }
+  inc() {
+    this.size++;
+  }
+
+  getValue() {
+    console.log(this.username);
+  }
+
+  onSubmit(form: FormGroup) {
+    console.log('Valid?', form.valid);
+    console.log(form.value);
+  }
 }

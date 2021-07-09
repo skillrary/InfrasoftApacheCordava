@@ -1,4 +1,4 @@
-{{string_var}}
+<!-- {{string_var}}
 {{number_var}}
 {{boolean_in_online}}
 
@@ -23,17 +23,65 @@
 <br>
 <h1>Product List</h1>
 <div *ngFor="let product of products">
-    {{product.name}}
-    <div *ngFor="let image of product.images">
-        <img src={{image}} style="width: 250px; height: auto;"/>
+    <app-post [data]="product"></app-post>
+</div> -->
+
+
+<!-- <div>
+    <button (click)="dec()" title="smaller">-</button>
+    <button (click)="inc()" title="bigger">+</button>
+    <label [style.font-size.px]="size">FontSize: {{size}}px</label>
+  </div>
+
+  <img src="./../assets/images/61s7sJEpsVL._SY450_.jpg"/> -->
+
+
+<!-- <div [ngClass]="{'my_class': step === 'step1'}">
+    Hello.!
+</div> -->
+
+<!-- <input type="text" [(ngModel)]="username">
+<p *ngIf="username.length < 4">
+    Please enter minimum 4 chars
+</p>
+<button (click)="getValue()">Get the value</button> -->
+
+
+
+<form [formGroup]="myForm" (ngSubmit)="onSubmit(myForm)">
+    <div>
+      <label>
+        Name:
+        <input formControlName="name" placeholder="Your name">
+      </label>
     </div>
-    <div *ngIf="product.images.length === 0">
-        There is no product images to display.!
+
+    Dirty: {{myForm.controls.name.dirty}} <br>
+    Touched: {{myForm.controls.name.touched}}
+
+
+    <div *ngIf="myForm.controls.name.invalid && (myForm.controls.name.dirty || myForm.controls.name.touched)" class="alert-danger">
+
+        <div *ngIf="myForm.controls.name.errors?.required">
+            Name is required.
+        </div>
+        <div *ngIf="myForm.controls.name.errors?.minlength">
+            Name must be at least 4 characters long.
+        </div>
     </div>
-    <p>Price: {{product.price}} </p>
-    <h5>Available colors: </h5>
-    <div *ngFor="let color of product.colors">
-        {{color}}
+
+
+    <div>
+      <label>
+        Email:
+        <input formControlName="email" placeholder="Your email">
+      </label>
     </div>
-    <hr>
-</div>
+    <div>
+      <label>
+        Message:
+        <input formControlName="message" placeholder="Your message">
+      </label>
+    </div>
+    <button type="submit">Send</button>
+  </form>

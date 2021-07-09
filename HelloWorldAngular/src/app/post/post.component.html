@@ -1,0 +1,16 @@
+{{data.name}}
+<div *ngFor="let image of data.images">
+    <img [src]="image" style="width: 250px; height: auto;"/>
+</div>
+<div *ngIf="data.images.length === 0">
+    There is no data images to display.!
+</div>
+<p>Price: {{data.price}} </p>
+<h5>Available colors: </h5>
+<div *ngFor="let color of data.colors">
+    {{color}}
+</div>
+<button (click)="doLike()"> Like </button>
+
+<input (blur)="textBoxFocusOut()">
+<hr>
