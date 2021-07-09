@@ -1,0 +1,26 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Blank
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div *ngFor="let product of products">
+    {{product.name}}
+    <div *ngFor="let image of product.images">
+        <img src={{image}} style="width: 250px; height: auto;"/>
+    </div>
+    <div *ngIf="product.images.length === 0">
+        There is no product images to display.!
+    </div>
+    <p>Price: {{product.price}} </p>
+    <h5>Available colors: </h5>
+    <div *ngFor="let color of product.colors">
+        {{color}}
+    </div>
+    <hr>
+</div>
+
+</ion-content>
