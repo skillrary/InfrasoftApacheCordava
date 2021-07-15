@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, FormControl, Validators, FormArray } from '@angular/forms';
 import { CommonService } from './services/common.service';
 
 @Component({
@@ -60,8 +60,13 @@ export class AppComponent {
 
   myForm: FormGroup;
 
+  signInForm: FormGroup;
+
+  userRegisterForm: FormGroup;
+
   constructor(
-    private cs: CommonService
+    private cs: CommonService,
+    private formBuilder: FormBuilder
   ) {
     setTimeout(() => {
       this.step = 'step1';
@@ -78,9 +83,34 @@ export class AppComponent {
       email: new FormControl(''),
       message: new FormControl('')
     });
+
+    this.signInForm = new FormGroup({
+      emailAddress: new FormControl('', [Validators.required, Validators.email]),
+      password: new FormControl('', [Validators.required, Validators.minLength(8), Validators.maxLength(20)])
+    });
+
+    this.userRegisterForm = new FormGroup({
+      displayName: new FormControl('', [Validators.required]),
+          children: this.formBuilder.array([
+              this.formBuilder.group({
+                  displayName: new FormControl('', []),
+                  dob: new FormControl('')
+              })
+          ])
+      });
   }
+
+  onLoginSubmit() {
+    if (!this.signInForm.valid) {
+      this.signInForm.markAllAsTouched();
+      return;
+    }
+    console.log(this._v)
+  }
+  // get _v() {
+  //   return this.signInForm.value;
+  // }
  
-  
   dec() {
     this.size--;
   }
@@ -96,4 +126,37 @@ export class AppComponent {
     console.log('Valid?', form.valid);
     console.log(form.value);
   }
+
+
+  onFormSubmit() {
+    if (!this.userRegisterForm.valid) {
+        this.userRegisterForm.markAllAsTouched();
+        return;
+    }
+    console.log(this._v)
+  }
+  get _v() {
+      return this.userRegisterForm.value;
+  }
+  childrenControls() {
+      return (this.userRegisterForm.get('children') as FormArray).controls;
+  }
+  childrenAddRow() {
+      const details = this.userRegisterForm.get('children') as FormArray;
+  details.push(this.childrenCreateItem());
+  }
+
+  childrenCreateItem() {
+      return this.formBuilder.group({
+          displayName: new FormControl('', []),
+          dob: new FormControl('', [Validators.required])
+      })
+
+  }
+
+  childrenRemoveItem(index: number) {
+    const details = this.userRegisterForm.get('children') as FormArray;
+    details.removeAt(index);
+  }
+  
 }

@@ -48,7 +48,7 @@
 
 
 
-<form [formGroup]="myForm" (ngSubmit)="onSubmit(myForm)">
+<!-- <form [formGroup]="myForm" (ngSubmit)="onSubmit(myForm)">
     <div>
       <label>
         Name:
@@ -85,3 +85,70 @@
     </div>
     <button type="submit">Send</button>
   </form>
+
+
+  <form [formGroup]="signInForm" novalidate (ngSubmit)="onLoginSubmit()">
+    
+    <div>
+        <label>Email Address</label>
+        <input type="email" formControlName="emailAddress" placeholder="">
+    </div>
+    <div *ngIf="signInForm.controls.emailAddress.touched && signInForm.controls.emailAddress.errors?.required">
+		* Required
+	</div>
+	<div *ngIf="signInForm.controls.emailAddress.touched && signInForm.controls.emailAddress.errors?.email">
+		* Check email format
+	</div>
+
+    
+    <div>
+        <label>Password</label>
+        <input type="password" formControlName="password" placeholder="">
+    </div>
+    <div *ngIf="signInForm.controls.password.touched && signInForm.controls.password.errors?.required">
+		* Required
+	</div>
+	<div *ngIf="signInForm.controls.password.touched && signInForm.controls.password.errors?.minlength">
+		Minimal length is {{signInForm.controls.password.errors?.minlength.requiredLength}} and actual is {{signInForm.controls.password.errors?.minlength.actualLength}}
+	</div>
+	<div *ngIf="signInForm.controls.password.touched && signInForm.controls.password.errors?.maxlength">
+		Maximum length is {{signInForm.controls.password.errors?.maxlength.requiredLength}} and actual is {{signInForm.controls.password.errors?.maxlength.actualLength}}
+	</div>
+
+    <button type="submit">Submit</button>
+</form> -->
+<!-- <hr>
+<form [formGroup]="userRegisterForm" novalidate (ngSubmit)="onFormSubmit()">
+    
+  <div>
+      <label>Display Name</label>
+      <input type="text" formControlName="displayName" placeholder="">
+  </div>
+  <div *ngIf="userRegisterForm.controls.displayName.touched && userRegisterForm.controls.displayName.errors?.required">
+  * Required
+</div>
+
+  
+  <div formArrayName="children" *ngFor="let field of childrenControls(); let ind = index;">
+      <ng-container [formGroupName]="ind">
+          <div>
+              <label>First Name & Last Name</label>
+              <input type="text" formControlName="displayName" placeholder="">
+          </div>
+          
+          <div>
+              <label>Date Of Birth</label>
+              <input type="date" formControlName="dob">
+          </div>
+          
+          <button (click)="childrenRemoveItem(ind)">Remove</button> 
+          <hr>
+      </ng-container>
+  </div>
+  <button (click)="childrenAddRow()" type="button">Add Row</button>
+
+  <button type="submit">Submit</button>
+</form> -->
+
+This is main page
+<router-outlet></router-outlet>

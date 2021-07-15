@@ -1,0 +1,8 @@
+<!-- {{userList | json}} -->
+
+<div *ngFor="let user of userList">
+    <h1>{{user.first_name}} {{user.last_name}}</h1>
+    <h4>{{user.email}}</h4>
+    <img [src]="user.avatar"/>
+    <hr>
+</div>
