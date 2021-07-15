@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { environment } from 'src/environments/environment';
 import { ApiService } from '../services/api.service';
 
 @Component({
@@ -13,7 +14,7 @@ export class UserListComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.api.get("https://reqres.in/api/users?page=1")
+    this.api.get(environment.base_url + "users?page=1")
     .subscribe((result: any) => {
       console.log(result);
       this.userList = result.data;
