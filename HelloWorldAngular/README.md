@@ -33,3 +33,14 @@ How to run dist folder in local machine.
 npm install -g http-server
 
 Run http-server command in dist>project name folder
+
+
+Learn angular example
+---------------------
+
+http://keepnote.cc/
+
+https://stackblitz.com/
+
+
+

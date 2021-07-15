@@ -8,13 +8,15 @@ import { PostComponent } from './post/post.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { UserListComponent } from './user-list/user-list.component'; 
 import { TokenInterceptorService } from './services/token-interceptor.service';
+import { UserDetailsComponent } from './user-details/user-details.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     PostComponent,
-    UserListComponent
+    UserListComponent,
+    UserDetailsComponent
   ],
   imports: [
     BrowserModule,

@@ -7,6 +7,8 @@
     <button (click)="saveInLs(user)">Save in LS</button>
     <button (click)="readFromLs(user.first_name)">Read from LS</button>
     <button (click)="removeFromLs(user.first_name)">Remove from lst</button>
+    <br>
+    <a routerLink="/user-details/{{user.id}}">View Profile</a>
     <hr>
 </div>
 
