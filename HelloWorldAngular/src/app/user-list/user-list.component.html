@@ -4,5 +4,10 @@
     <h1>{{user.first_name}} {{user.last_name}}</h1>
     <h4>{{user.email}}</h4>
     <img [src]="user.avatar"/>
+    <button (click)="saveInLs(user)">Save in LS</button>
+    <button (click)="readFromLs(user.first_name)">Read from LS</button>
+    <button (click)="removeFromLs(user.first_name)">Remove from lst</button>
     <hr>
 </div>
+
+<button (click)="clearLs()">Clear All</button>

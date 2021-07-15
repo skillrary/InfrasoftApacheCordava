@@ -20,4 +20,22 @@ export class UserListComponent implements OnInit {
     });
   }
 
+  saveInLs(user: any) {
+    console.log(user);
+    localStorage.setItem(user.first_name, JSON.stringify(user));
+  }
+
+  readFromLs(first_name: any) {
+    const user = localStorage.getItem(first_name);
+    console.log(JSON.parse(user || '{}'));
+  }
+
+  removeFromLs(first_name: string) {
+    localStorage.removeItem(first_name);
+  }
+
+  clearLs() {
+    localStorage.clear();
+  }
+
 }

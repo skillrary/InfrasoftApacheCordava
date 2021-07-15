@@ -14,8 +14,8 @@ export class ApiService {
   }
   
   public post(url: string, data: any, options?: any) { 
-    return this.http.post(url, data, options); 
-  } 
+    return this.http.post(url, data, options);
+  }
   
   public put(url: string, data: any, options?: any) { 
     return this.http.put(url, data, options); 
