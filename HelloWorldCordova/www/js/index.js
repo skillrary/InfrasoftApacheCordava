@@ -27,6 +27,8 @@ function onDeviceReady() {
     console.log('Running cordova-' + cordova.platformId + '@' + cordova.version);
     document.getElementById('deviceready').classList.add('ready');
 
+    console.log(device);
+
     let cameraOptions = {
         quality: 50,
         destinationType: Camera.DestinationType.FILE_URI,
