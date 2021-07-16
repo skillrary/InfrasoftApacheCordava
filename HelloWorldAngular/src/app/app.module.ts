@@ -9,6 +9,11 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { UserListComponent } from './user-list/user-list.component'; 
 import { TokenInterceptorService } from './services/token-interceptor.service';
 import { UserDetailsComponent } from './user-details/user-details.component';
+import { LoginComponent } from './login/login.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { ForgetPasswordComponent } from './forget-password/forget-password.component';
+import { RegisterComponent } from './register/register.component';
+import { AuthGuardService } from './services/auth-guard.service';
 
 
 @NgModule({
@@ -16,7 +21,11 @@ import { UserDetailsComponent } from './user-details/user-details.component';
     AppComponent,
     PostComponent,
     UserListComponent,
-    UserDetailsComponent
+    UserDetailsComponent,
+    LoginComponent,
+    DashboardComponent,
+    ForgetPasswordComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
@@ -30,7 +39,8 @@ import { UserDetailsComponent } from './user-details/user-details.component';
       provide: HTTP_INTERCEPTORS, 
       useClass: TokenInterceptorService, 
       multi: true
-    }
+    },
+    AuthGuardService
   ],
   bootstrap: [AppComponent]
 })
