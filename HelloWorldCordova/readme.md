@@ -36,3 +36,12 @@ How to see console of cordova application
 Open chrome and type in address
 
 chrome://inspect
+
+
+How to remove cordova plugin
+----------------------------
+cordova plugin remove cordova-plugin-camera
+
+How we can check how many plugins are insttalled on my cordova project?
+-------------------------------------
+cordova plugin list
