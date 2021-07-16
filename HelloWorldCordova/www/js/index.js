@@ -26,4 +26,14 @@ function onDeviceReady() {
 
     console.log('Running cordova-' + cordova.platformId + '@' + cordova.version);
     document.getElementById('deviceready').classList.add('ready');
+
+    let cameraOptions = {
+        quality: 50
+    };
+    navigator.camera.getPicture((cameraSuccess) => {
+        console.log(cameraSuccess);
+        document.getElementById("img").src = cameraSuccess;
+    }, (cameraError) => {
+        console.log(cameraError);
+    }, cameraOptions);
 }
