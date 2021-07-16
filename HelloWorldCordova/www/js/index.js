@@ -28,7 +28,9 @@ function onDeviceReady() {
     document.getElementById('deviceready').classList.add('ready');
 
     let cameraOptions = {
-        quality: 50
+        quality: 50,
+        destinationType: Camera.DestinationType.FILE_URI,
+        sourceType: Camera.PictureSourceType.PHOTOLIBRARY,
     };
     navigator.camera.getPicture((cameraSuccess) => {
         console.log(cameraSuccess);
