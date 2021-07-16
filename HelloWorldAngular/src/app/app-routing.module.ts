@@ -39,6 +39,14 @@ const routes: Routes = [
   }, {
     path: 'registration',
     component: RegisterComponent
+  },
+  {
+    path: 'a',
+    loadChildren: () => import('./modulea/modulea.module').then(m => m.ModuleaModule)
+  },
+  {
+    path: 'b',
+    loadChildren: () => import('./moduleb/moduleb.module').then(m => m.ModulebModule)
   }
 ];
 
