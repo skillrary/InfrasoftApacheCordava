@@ -59,3 +59,9 @@ https://ionicframework.com/docs/vue/config
 Shared Module
 https://angular.io/guide/sharing-ngmodules
 https://www.pluralsight.com/guides/using-shared-modules-in-angular
+
+
+
+Cordova Plugins
+---------------
+https://ionicframework.com/docs/native/
