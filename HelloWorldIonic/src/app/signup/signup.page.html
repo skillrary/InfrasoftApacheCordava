@@ -9,6 +9,9 @@
 
 <ion-content>
   <app-logo></app-logo>
+
+  <img [src]="base64Image"/>
+  <ion-button (click)="takePicture()">Take Picture</ion-button>
 </ion-content>
 <ion-footer>
   <ion-button expand="block" fill="outline" routerLink="/login">Already an account?</ion-button>

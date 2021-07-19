@@ -8,6 +8,9 @@ import { LogoComponent } from 'src/app/components/logo/logo.component';
   ],
   imports: [
     CommonModule
+  ],
+  exports: [
+    LogoComponent
   ]
 })
 export class SharedModule { }
