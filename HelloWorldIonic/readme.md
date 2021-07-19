@@ -53,3 +53,9 @@ https://ionicframework.com/docs/layout/css-utilities
 Ionic Config
 -----------
 https://ionicframework.com/docs/vue/config
+
+
+
+Shared Module
+https://angular.io/guide/sharing-ngmodules
+https://www.pluralsight.com/guides/using-shared-modules-in-angular
