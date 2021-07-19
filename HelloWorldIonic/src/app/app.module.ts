@@ -10,7 +10,12 @@ import { AppRoutingModule } from './app-routing.module';
     AppComponent
   ],
   entryComponents: [],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule],
+  imports: [BrowserModule, 
+    IonicModule.forRoot(
+      {
+        backButtonText: ''
+      }
+    ), AppRoutingModule],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],
 })

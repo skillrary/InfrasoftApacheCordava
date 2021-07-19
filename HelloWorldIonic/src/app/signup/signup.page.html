@@ -1,9 +1,15 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>signup</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/login"></ion-back-button>
+    </ion-buttons>
+    <ion-title mode="ios">signup</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
   <app-logo></app-logo>
 </ion-content>
+<ion-footer>
+  <ion-button expand="block" fill="outline" routerLink="/login">Already an account?</ion-button>
+</ion-footer>

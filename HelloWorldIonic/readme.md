@@ -48,3 +48,8 @@ https://ionic.io/ionicons
 CSS Utilites
 ------------
 https://ionicframework.com/docs/layout/css-utilities
+
+
+Ionic Config
+-----------
+https://ionicframework.com/docs/vue/config
