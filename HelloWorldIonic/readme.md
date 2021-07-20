@@ -70,3 +70,8 @@ https://ionicframework.com/docs/native/
 Spread Operator
 ----------------
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax
+
+
+Destructuring
+-------------
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment
