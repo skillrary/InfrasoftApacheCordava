@@ -65,3 +65,8 @@ https://www.pluralsight.com/guides/using-shared-modules-in-angular
 Cordova Plugins
 ---------------
 https://ionicframework.com/docs/native/
+
+
+Spread Operator
+----------------
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax
