@@ -6,6 +6,23 @@
 
 <ion-content>
   <app-logo></app-logo>
+
+  <form [formGroup]="loginForm" novalidate (ngSubmit)="onFormSubmit()">
+    
+    <ion-item>
+        <ion-label position="floating">Email Address</ion-label>
+        <ion-input type="email" formControlName="email" placeholder=""></ion-input>
+    </ion-item>
+    
+    
+    <ion-item>
+        <ion-label position="floating">Password</ion-label>
+        <ion-input type="password" formControlName="password" placeholder=""></ion-input>
+    </ion-item>
+    
+    <ion-button type="submit">Submit</ion-button>
+</form>
+
 </ion-content>
 <ion-footer class="ion-padding">
   <ion-button expand="block" fill="outline" routerLink="/forgot-password">Forgot password?</ion-button>
