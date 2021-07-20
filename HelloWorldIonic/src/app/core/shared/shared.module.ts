@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { LogoComponent } from 'src/app/components/logo/logo.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { ApiService } from 'src/app/services/api.service';
 
 @NgModule({
   declarations: [
@@ -10,12 +12,14 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
   imports: [
     ReactiveFormsModule,
     FormsModule,
-    CommonModule
+    CommonModule,
+    HttpClientModule
   ],
   exports: [
     LogoComponent,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ]
 })
 export class SharedModule { }
