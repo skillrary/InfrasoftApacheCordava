@@ -1,0 +1,90 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Add new contact</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="addContactForm" novalidate (ngSubmit)="onFormSubmit()">
+
+    <ion-item>
+      <ion-label position="floating">First Name</ion-label>
+      <ion-textarea cols="10" rows="2" formControlName="name" placeholder=""></ion-textarea>
+    </ion-item>
+    <div *ngIf="addContactForm.controls.name.touched && addContactForm.controls.name.errors?.required">
+      * Required
+    </div>
+    <div *ngIf="addContactForm.controls.name.touched && addContactForm.controls.name.errors?.minlength">
+      Minimal length is {{addContactForm.controls.name.errors?.minlength.requiredLength}} and actual is
+      {{addContactForm.controls.name.errors?.minlength.actualLength}}
+    </div>
+    <div *ngIf="addContactForm.controls.name.touched && addContactForm.controls.name.errors?.maxlength">
+      Maximum length is {{addContactForm.controls.name.errors?.maxlength.requiredLength}} and actual is
+      {{addContactForm.controls.name.errors?.maxlength.actualLength}}
+    </div>
+
+
+    <ion-item>
+      <ion-label position="floating">Last Name</ion-label>
+      <ion-input type="text" formControlName="surnames" placeholder=""></ion-input>
+    </ion-item>
+    <div *ngIf="addContactForm.controls.surnames.touched && addContactForm.controls.surnames.errors?.required">
+      * Required
+    </div>
+    <div *ngIf="addContactForm.controls.surnames.touched && addContactForm.controls.surnames.errors?.minlength">
+      Minimal length is {{addContactForm.controls.surnames.errors?.minlength.requiredLength}} and actual is
+      {{addContactForm.controls.surnames.errors?.minlength.actualLength}}
+    </div>
+    <div *ngIf="addContactForm.controls.surnames.touched && addContactForm.controls.surnames.errors?.maxlength">
+      Maximum length is {{addContactForm.controls.surnames.errors?.maxlength.requiredLength}} and actual is
+      {{addContactForm.controls.surnames.errors?.maxlength.actualLength}}
+    </div>
+
+    
+    <h3>Phones</h3>
+    <ion-list formArrayName="phones" *ngFor="let field of phonesControls(); let ind = index;">
+      <ng-container [formGroupName]="ind">
+          <ion-item>
+              <ion-label position="floating">Phone-{{ind + 1}}</ion-label>
+              <ion-input type="number" formControlName="phone" placeholder=""></ion-input>
+          </ion-item>
+          <div *ngIf="addContactForm.controls.phones['controls'][ind].controls.phone.touched && addContactForm.controls.phones['controls'][ind].controls.phone?.errors">
+      * Required
+    </div>
+
+          <ion-button color="danger" size="small" (click)="phonesRemoveItem(ind)">Remove</ion-button>
+          <hr>
+      </ng-container>
+  </ion-list>
+    <ion-button type="button" (click)="phonesAddRow()">Add row</ion-button>
+
+    <hr>
+    <h3>Emails</h3>
+    <ion-list formArrayName="emails" *ngFor="let field of emailsControls(); let ind = index;">
+      <ng-container [formGroupName]="ind">
+        <ion-item>
+          <ion-label position="floating">Email-{{ind + 1}}</ion-label>
+          <ion-input type="email" formControlName="email" placeholder=""></ion-input>
+        </ion-item>
+        <div
+          *ngIf="addContactForm.controls.emails['controls'][ind].controls.email.touched && addContactForm.controls.emails['controls'][ind].controls.email?.errors">
+          * Required
+        </div>
+        <div
+          *ngIf="addContactForm.controls.emails['controls'][ind].controls.email.touched && addContactForm.controls.emails['controls'][ind].controls.email.errors?.email">
+          * Check email format
+        </div>
+
+        <ion-button color="danger" size="small" (click)="emailsRemoveItem(ind)">Remove</ion-button>
+        <hr>
+      </ng-container>
+    </ion-list>
+    <ion-button type="button" (click)="emailsAddRow()">Add row</ion-button>
+    <br>
+
+    <ion-button expand="block" type="submit">Add new contact</ion-button>
+  </form>
+</ion-content>

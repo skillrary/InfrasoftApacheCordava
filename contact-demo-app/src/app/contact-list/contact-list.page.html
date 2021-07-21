@@ -1,0 +1,62 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Contact List</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="loadContacts()">
+        <ion-icon name="refresh"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-list-header>
+      Total contact found: {{contactList.length}}
+    </ion-list-header>
+
+    <ng-container *ngFor="let contact of contactList; let ind = index;">
+
+      <ion-item>
+        <ion-avatar slot="start">
+          <img [src]="contact.photo ? contact.photo : './assets/images/default.png'">
+        </ion-avatar>
+        <ion-label>
+          <h2>{{contact.name}} {{contact.surnames}}</h2>
+          <ion-chip color="secondary" (click)="togglePhoneEmail('currentIndexOfPhone', ind)">
+            <ion-icon name="call-outline"></ion-icon>
+            <ion-label>{{contact.phones.length}} saved.</ion-label>
+          </ion-chip>
+          <ion-chip color="primary" (click)="togglePhoneEmail('currentIndexOfEmail', ind)">
+            <ion-icon name="mail-outline"></ion-icon>
+            <ion-label>{{contact.emails.length}} saved.</ion-label>
+          </ion-chip>
+        </ion-label>
+      </ion-item>
+
+      <ng-container *ngFor="let phone of contact.phones">
+        <ion-item *ngIf="ind === currentIndexOfPhone">
+          <ion-label>
+            {{phone.phone}}
+          </ion-label>
+        </ion-item>
+      </ng-container>
+
+      <ng-container *ngFor="let email of contact.emails">
+        <ion-item *ngIf="ind === currentIndexOfEmail">
+          <ion-label>
+            {{email.phone}}
+          </ion-label>
+        </ion-item>
+      </ng-container>
+
+    </ng-container>
+  </ion-list>
+
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed" routerLink="/contact-add">
+    <ion-fab-button>
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+</ion-content>
