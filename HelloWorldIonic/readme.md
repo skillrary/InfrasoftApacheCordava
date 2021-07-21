@@ -1,6 +1,8 @@
 ionic start <projct-name>
 
 
+ionic start myApp tabs --cordova
+
 ionic start HelloWorldIonic
 
 > angular -> Y

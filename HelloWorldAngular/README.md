@@ -33,6 +33,13 @@ ng build --configuration=qa
 ng build --configuration=development
 
 
+Use this build command whne you have to ship that angular project into the cordova based project
+------------------------
+ng build --prod --base-href=www
+
+
+
+
 How to run dist folder in local machine.
 ----------------------------------------
 npm install -g http-server
