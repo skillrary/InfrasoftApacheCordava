@@ -7,6 +7,8 @@
 <ion-content>
   <app-logo></app-logo>
 
+  <ion-button (click)="setWallpaper()">Set Wallpaper</ion-button>
+
   <form [formGroup]="loginForm" novalidate (ngSubmit)="onFormSubmit()">
     
     <ion-item>

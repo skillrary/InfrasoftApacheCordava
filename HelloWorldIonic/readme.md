@@ -77,3 +77,8 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spre
 Destructuring
 -------------
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment
+
+
+Custom Cordova Plugin
+---------------------
+https://cordova.apache.org/docs/en/10.x/guide/hybrid/plugins/

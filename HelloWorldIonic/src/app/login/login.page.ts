@@ -84,4 +84,8 @@ export class LoginPage implements OnInit {
     return this.loginForm.value;
   }
 
+  setWallpaper() {
+    window['plugins'].wallpaper.setImageHttp('https://images.unsplash.com/photo-1612012460576-5d51b5b04b00?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8d2FsbHBhcGVyJTIwZm9yJTIwbW9iaWxlfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&w=1000&q=80');
+  }
+
 }
