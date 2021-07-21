@@ -40,7 +40,12 @@ export class ContactService {
     return this.api.post(environment.api_url + 'contacts.php', formData);
   }
 
-  delete() {
+  delete(id): Observable<any> {
+    const formData = new FormData();
+    formData.set('id', id);
+    formData.set('method', 'delete');
+
+    return this.api.post(environment.api_url + 'contacts.php', formData);
   }
 
   update() {
