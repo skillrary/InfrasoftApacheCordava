@@ -14,6 +14,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { ForgetPasswordComponent } from './forget-password/forget-password.component';
 import { RegisterComponent } from './register/register.component';
 import { AuthGuardService } from './services/auth-guard.service';
+import { LocationStrategy, HashLocationStrategy} from '@angular/common';
 
 
 @NgModule({
@@ -40,6 +41,7 @@ import { AuthGuardService } from './services/auth-guard.service';
       useClass: TokenInterceptorService, 
       multi: true
     },
+    { provide: LocationStrategy, useClass: HashLocationStrategy },
     AuthGuardService
   ],
   bootstrap: [AppComponent]

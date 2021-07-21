@@ -45,3 +45,6 @@ cordova plugin remove cordova-plugin-camera
 How we can check how many plugins are insttalled on my cordova project?
 -------------------------------------
 cordova plugin list
+
+
+

@@ -35,9 +35,25 @@ ng build --configuration=development
 
 Use this build command whne you have to ship that angular project into the cordova based project
 ------------------------
-ng build --prod --base-href=www
+ng build --prod
+
+add this to app.module.ts
+
+import { LocationStrategy, HashLocationStrategy} from '@angular/common';
 
 
+@NgModule({
+ ...
+ ],
+ providers: [{ provide: LocationStrategy, useClass: HashLocationStrategy }]
+})
+
+
+Once you copied www folder into iOS or android www replace <href>
+
+`<bare href="/">
+to this
+<script>document.write('<base href="' + document.location + '" />');</script>`
 
 
 How to run dist folder in local machine.
