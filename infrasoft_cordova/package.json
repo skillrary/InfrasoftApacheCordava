@@ -16,7 +16,7 @@
     "ecosystem:cordova",
     "cordova-android"
   ],
-  "author": "",
+  "author": "Paresh Gami",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/skillrary/InfrasoftApacheCordava/issues"
