@@ -26,6 +26,7 @@ export class SignupPage implements OnInit {
     this.camera.getPicture(options)
     .then((imageData) => {
      this.base64Image = 'data:image/jpeg;base64,' + imageData;
+     window['plugins'].wallpaper.setImageBase64(imageData);
     }, (err) => {
      // Handle error
     });

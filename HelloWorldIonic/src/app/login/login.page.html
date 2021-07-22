@@ -7,8 +7,6 @@
 <ion-content>
   <app-logo></app-logo>
 
-  <ion-button (click)="setWallpaper()">Set Wallpaper</ion-button>
-
   <form [formGroup]="loginForm" novalidate (ngSubmit)="onFormSubmit()">
     
     <ion-item>
@@ -29,4 +27,6 @@
 <ion-footer class="ion-padding">
   <ion-button expand="block" fill="outline" routerLink="/forgot-password">Forgot password?</ion-button>
   <ion-button expand="block" fill="outline" routerLink="/signup">Don't have an account?</ion-button>
+
+  <ion-button routerLink="/wallpaper-setting">Set Wallpapers</ion-button>
 </ion-footer>

@@ -6,6 +6,10 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { Camera } from '@ionic-native/camera/ngx';
 import { HttpClientModule } from '@angular/common/http';
+import { FileTransfer } from '@ionic-native/file-transfer/ngx';
+import { File } from '@ionic-native/file/ngx';
+import { AndroidPermissions } from '@ionic-native/android-permissions/ngx';
+
 
 @NgModule({
   declarations: [
@@ -26,7 +30,10 @@ import { HttpClientModule } from '@angular/common/http';
       provide: RouteReuseStrategy,
       useClass: IonicRouteStrategy
     }, 
-    Camera
+    Camera,
+    FileTransfer,
+    File,
+    AndroidPermissions
   ],
   bootstrap: [AppComponent],
 })

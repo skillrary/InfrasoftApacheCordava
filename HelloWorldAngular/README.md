@@ -35,12 +35,8 @@ ng build --configuration=development
 
 Use this build command whne you have to ship that angular project into the cordova based project
 ------------------------
-ng build --prod
-
 add this to app.module.ts
-
 import { LocationStrategy, HashLocationStrategy} from '@angular/common';
-
 
 @NgModule({
  ...
@@ -48,6 +44,7 @@ import { LocationStrategy, HashLocationStrategy} from '@angular/common';
  providers: [{ provide: LocationStrategy, useClass: HashLocationStrategy }]
 })
 
+ng build --prod
 
 Once you copied www folder into iOS or android www replace <href>
 
