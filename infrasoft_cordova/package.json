@@ -1,0 +1,25 @@
+{
+  "name": "cordova.infrasoft.volumn",
+  "version": "1.0.0",
+  "description": "Just after the clone repo make sure you install `npm install` in all project",
+  "cordova": {
+    "id": "cordova.infrasoft.volumn",
+    "platforms": [
+      "android"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/skillrary/InfrasoftApacheCordava.git"
+  },
+  "keywords": [
+    "ecosystem:cordova",
+    "cordova-android"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/skillrary/InfrasoftApacheCordava/issues"
+  },
+  "homepage": "https://github.com/skillrary/InfrasoftApacheCordava#readme"
+}

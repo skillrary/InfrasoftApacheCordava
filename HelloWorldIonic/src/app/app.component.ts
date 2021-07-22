@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { AndroidPermissions } from '@ionic-native/android-permissions/ngx';
 import { Platform } from '@ionic/angular';
 
+declare var cordova;
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html',
@@ -14,6 +15,16 @@ export class AppComponent {
   ) {
     this.platform.ready()
     .then((_) => {
+
+      // console.log(window['plugins']);
+      console.log(cordova);
+
+      cordova.plugins.infrasoft_cordova.coolMethod('Hello.!', (success) => {
+        alert(success)
+      }, error => {
+        alert(error);
+      });
+
       this.androidPermissions
       .requestPermissions(
         [
