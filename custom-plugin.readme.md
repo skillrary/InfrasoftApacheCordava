@@ -6,3 +6,4 @@ plugman create --name infrasoft_cordova --plugin_id cordova.infrasoft.volumn --p
 
 plugman platform add --platform_name android
 
+plugman platform add --platform_name ios
